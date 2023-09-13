@@ -1,17 +1,20 @@
 package com.MyBank.Smile.Bank.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="customer")
+@Builder
+@Table(name="customers")
 public class CustomerModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +22,25 @@ public class CustomerModel {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
+    private String gender;
     private String stateOfOrigin;
     private String mothersMaidenName;
     private String phoneNumber;
+    private String alternativePhoneNumber;
     private String homeAddress;
+    private String NIN;
     private Long bvn;
     private String emailAddress;
+    private String accountNumber;
+    private BigDecimal accountBalance;
+    //  @CreationTimestamp: This is an annotation that sets the field value
+    // to the current timestamp when the entity is first saved.
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    // @UpdateTimestamp: It automatically sets the
+    // field value to the current timestamp on each entity update
+    @UpdateTimestamp
+    private LocalDateTime modifiedAt;
+
 }
