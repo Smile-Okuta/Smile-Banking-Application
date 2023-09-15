@@ -1,6 +1,5 @@
 package com.MyBank.Smile.Bank.utils;
 
-import java.math.BigDecimal;
 import java.time.Year;
 
 public class AccountUtils {
@@ -28,8 +27,8 @@ public class AccountUtils {
 
         String year = String.valueOf(currentYear);
         String randomNumber = String.valueOf(randNumber);
-        StringBuilder accounNumber = new StringBuilder();
+        StringBuilder accountNumber = new StringBuilder();
 
-        return accounNumber.append(year).append(randomNumber).toString();
+        return accountNumber.append(year).append(randomNumber).toString();
     }
 }

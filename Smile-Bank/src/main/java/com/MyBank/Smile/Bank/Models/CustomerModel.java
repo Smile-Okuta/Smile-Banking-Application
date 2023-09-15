@@ -1,5 +1,6 @@
 package com.MyBank.Smile.Bank.Models;
 
+import com.MyBank.Smile.Bank.utils.AccountUtils;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -7,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -31,8 +33,8 @@ public class CustomerModel {
     private String NIN;
     private Long bvn;
     private String emailAddress;
-    private String accountNumber;
-    private BigDecimal accountBalance;
+    @OneToMany
+    private List<AccountModel> accounts;
     //  @CreationTimestamp: This is an annotation that sets the field value
     // to the current timestamp when the entity is first saved.
     @CreationTimestamp
