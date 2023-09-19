@@ -22,4 +22,5 @@ public class CustomerRequest {
     private String NIN;
     private Long bvn;
     private String emailAddress;
+    private String accountType;
 }

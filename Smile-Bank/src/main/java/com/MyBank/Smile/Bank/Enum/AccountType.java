@@ -1,5 +1,5 @@
 package com.MyBank.Smile.Bank.Enum;
 
-public enum AccountEnum {
+public enum AccountType {
     SAVINGS, FIXED, CURRENT
 }

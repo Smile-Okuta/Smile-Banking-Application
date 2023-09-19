@@ -1,6 +1,8 @@
 package com.MyBank.Smile.Bank.utils;
 
+import java.security.SecureRandom;
 import java.time.Year;
+import java.util.stream.Collectors;
 
 public class AccountUtils {
 
@@ -9,26 +11,14 @@ public class AccountUtils {
     public static final String ACCOUNT_CREATION_SUCCESS_CODE = "002";
     public static final String ACCOUNT_CREATION_SUCCESS_MESSAGE = "Account Created Successfully";
 
+
     public static String generateAccountNumber(){
-        //    Creating a random Account Number using:
-//    Current year + randomSixDigits
-//    The randomSixDigit will begin from 100,000 and end at 999,999
+        final SecureRandom secureRandom = new SecureRandom(); //instantiate a secure random class to generate random numbers
+        Year currentYear = Year.now(); //returns the current year
+        String randomNumbers = secureRandom.ints(8, 0, 10)//generates an 8 digit number starting from 1 to 9 but not including 10
+                .mapToObj(String::valueOf) //converts the digits to string
+                .collect(Collectors.joining()); //collect the converted string and join them together
 
-        Year currentYear = Year.now();
-        int min = 100000;
-        int max = 999999;
-
-//    generate a random number between min and max
-//    Math.random generates numbers between 0 -9
-
-        int randNumber = (int) Math.floor (Math.random() * (max - min + 1) + min);
-
-//  convert the current and randomNumber to Strings, then concatenate them
-
-        String year = String.valueOf(currentYear);
-        String randomNumber = String.valueOf(randNumber);
-        StringBuilder accountNumber = new StringBuilder();
-
-        return accountNumber.append(year).append(randomNumber).toString();
+        return currentYear.toString().concat(randomNumbers);
     }
 }
