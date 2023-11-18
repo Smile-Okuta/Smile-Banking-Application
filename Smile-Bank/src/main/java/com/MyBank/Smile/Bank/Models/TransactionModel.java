@@ -1,6 +1,6 @@
 package com.MyBank.Smile.Bank.Models;
 
-import com.MyBank.Smile.Bank.Enum.TransactionEnum;
+import com.MyBank.Smile.Bank.Enum.TransactionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +17,9 @@ public class TransactionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private TransactionEnum type;
+    @Enumerated(EnumType.STRING)
+    @Column(name="Transaction Type")
+    private TransactionType type;
     private int amount;
     private String accountName;
     private Long accountNumber;
@@ -27,5 +29,5 @@ public class TransactionModel {
     private String thirdPartyAccountName;
     private Long thirdPartyAccountNumber;
     @ManyToOne
-    private AccountModel account;
+    private UserModel account;
 }

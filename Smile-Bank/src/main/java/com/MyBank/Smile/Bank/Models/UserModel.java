@@ -1,22 +1,23 @@
 package com.MyBank.Smile.Bank.Models;
 
+import com.MyBank.Smile.Bank.Enum.AccountType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @Builder
-@Table(name="customers")
-public class CustomerModel {
+@Table(name="Account")
+public class UserModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -30,17 +31,14 @@ public class CustomerModel {
     private String NIN;
     private Long bvn;
     private String emailAddress;
-    private String accountType;
+    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name="Account Type")
+    private AccountType accountType;
+    private String accountNumber;
+    private BigDecimal accountBalance;
     @OneToMany
-    private List<AccountModel> accountModels;
-    //  @CreationTimestamp: This is an annotation that sets the field value
-    // to the current timestamp when the entity is first saved.
-    @CreationTimestamp
+    private List<TransactionModel> transactions;
     private LocalDateTime createdAt;
-
-    // @UpdateTimestamp: It automatically sets the
-    // field value to the current timestamp on each entity update
-    @UpdateTimestamp
     private LocalDateTime modifiedAt;
-
 }

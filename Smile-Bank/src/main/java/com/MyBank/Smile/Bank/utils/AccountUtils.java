@@ -10,7 +10,8 @@ public class AccountUtils {
     public static final String ACCOUNT_EXIST_MESSAGE = "This user already exist";
     public static final String ACCOUNT_CREATION_SUCCESS_CODE = "002";
     public static final String ACCOUNT_CREATION_SUCCESS_MESSAGE = "Account Created Successfully";
-
+    public static final String CUSTOMER_DOES_NOT_EXIST_MESSAGE = "Cannot create a new account without a customer, create new customer";
+    public static final String CUSTOMER_DOES_NOT_EXIST_CODE = "003";
 
     public static String generateAccountNumber(){
         final SecureRandom secureRandom = new SecureRandom(); //instantiate a secure random class to generate random numbers

@@ -6,15 +6,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountRequest {
-    private Long customerId;
+    private String firstName;
+    private String lastName;
+    private String NIN;
     private AccountType accountType;
-//    private String accountNumber;
-//    private BigDecimal accountBalance;
-//    @OneToMany
-//    private List<TransactionModel> transactions;
+    private String accountNumber;
 }

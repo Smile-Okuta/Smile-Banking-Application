@@ -1,5 +1,6 @@
 package com.MyBank.Smile.Bank.Dto;
 
+import com.MyBank.Smile.Bank.Enum.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerRequest {
+public class UserRequest {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
@@ -22,5 +23,6 @@ public class CustomerRequest {
     private String NIN;
     private Long bvn;
     private String emailAddress;
-    private String accountType;
+    private AccountType accountType;
+
 }
