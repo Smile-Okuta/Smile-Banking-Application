@@ -11,8 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="staff")
-public class StaffModel {
+public class AdminModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

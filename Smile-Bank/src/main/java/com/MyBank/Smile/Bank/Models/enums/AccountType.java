@@ -1,4 +1,4 @@
-package com.MyBank.Smile.Bank.Enum;
+package com.MyBank.Smile.Bank.Models.enums;
 
 public enum AccountType {
     SAVINGS,

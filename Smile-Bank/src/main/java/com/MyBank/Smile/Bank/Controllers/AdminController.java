@@ -1,4 +1,4 @@
 package com.MyBank.Smile.Bank.Controllers;
 
-public class StaffController {
+public class AdminController {
 }

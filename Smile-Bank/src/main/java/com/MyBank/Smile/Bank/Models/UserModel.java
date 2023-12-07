@@ -1,6 +1,7 @@
 package com.MyBank.Smile.Bank.Models;
 
-import com.MyBank.Smile.Bank.Enum.AccountType;
+import com.MyBank.Smile.Bank.Models.enums.AccountType;
+import com.MyBank.Smile.Bank.utils.AccountUtils;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,7 +15,6 @@ import java.util.List;
 @Setter
 @Getter
 @Builder
-@Table(name="Account")
 public class UserModel {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -31,14 +31,11 @@ public class UserModel {
     private String NIN;
     private Long bvn;
     private String emailAddress;
-    private String status;
-    @Enumerated(EnumType.STRING)
-    @Column(name="Account Type")
-    private AccountType accountType;
     private String accountNumber;
     private BigDecimal accountBalance;
-    @OneToMany
-    private List<TransactionModel> transactions;
+    private AccountType accountType;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
+    @OneToMany
+    private List<Account> accounts;
 }

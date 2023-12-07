@@ -1,4 +1,4 @@
-package com.MyBank.Smile.Bank.Dto;
+package com.MyBank.Smile.Bank.Dto.Response;
 
 import lombok.*;
 

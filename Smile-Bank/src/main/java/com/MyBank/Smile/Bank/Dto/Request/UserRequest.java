@@ -1,6 +1,6 @@
-package com.MyBank.Smile.Bank.Dto;
+package com.MyBank.Smile.Bank.Dto.Request;
 
-import com.MyBank.Smile.Bank.Enum.AccountType;
+import com.MyBank.Smile.Bank.Models.enums.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,25 +1,26 @@
 package com.MyBank.Smile.Bank.Controllers;
 
-import com.MyBank.Smile.Bank.Dto.UserRequest;
-import com.MyBank.Smile.Bank.Dto.BankResponse;
+import com.MyBank.Smile.Bank.Dto.Request.NameEnquiryRequest;
+import com.MyBank.Smile.Bank.Dto.Request.UserRequest;
+import com.MyBank.Smile.Bank.Dto.Response.BankResponse;
 import com.MyBank.Smile.Bank.Services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("account")
 @Controller
 public class UserController {
-    private final UserService accountService;
-        @PostMapping("create_account")
-    public BankResponse createAccount(@RequestBody UserRequest userRequest){
-            return accountService.createAccount(userRequest);
+    private final UserService userService;
+        @PostMapping("create_user")
+    public BankResponse createUser(@RequestBody UserRequest userRequest){
+            return userService.createUser(userRequest);
     }
 
-
+    @GetMapping("nameEnquiry")
+    public String nameEnquiry(@RequestBody NameEnquiryRequest request){
+            return userService.nameEnquiry(request);
+    }
 }

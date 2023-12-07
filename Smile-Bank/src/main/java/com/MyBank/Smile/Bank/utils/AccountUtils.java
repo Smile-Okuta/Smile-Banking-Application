@@ -10,8 +10,20 @@ public class AccountUtils {
     public static final String ACCOUNT_EXIST_MESSAGE = "This user already exist";
     public static final String ACCOUNT_CREATION_SUCCESS_CODE = "002";
     public static final String ACCOUNT_CREATION_SUCCESS_MESSAGE = "Account Created Successfully";
-    public static final String CUSTOMER_DOES_NOT_EXIST_MESSAGE = "Cannot create a new account without a customer, create new customer";
-    public static final String CUSTOMER_DOES_NOT_EXIST_CODE = "003";
+    public static final String ACCOUNT_DOES_NOT_EXIST_MESSAGE = "Account does not exist";
+    public static final String ACCOUNT_DOES_NOT_EXIST_CODE = "003";
+    public static final String ACCOUNT_FOUND_CODE = "004";
+    public static final String ACCOUNT_FOUND_SUCCESS = "User Account Found";
+    public static final String USER_DOES_NOT_EXIST_MESSAGE = "User Does Not Exist";
+    public static final String ACCOUNT_CREDITED_SUCCESS_MESSAGE = "Account Credited successfully";
+    public static final String ACCOUNT_CREDITED_SUCCESS_CODE = "006";
+    public static final String ACCOUNT_DEBITED_SUCCESS_MESSAGE = "Account Debited Successfully";
+    public static final String ACCOUNT_DEBITED_SUCCESS_CODE = "007";
+    public static final String TRANSFER_SUCCESSFUL_CODE = "008";
+
+    public static final String TRANSFER_SUCCESSFUL_MESSAGE = "Transfer Successful";
+
+
 
     public static String generateAccountNumber(){
         final SecureRandom secureRandom = new SecureRandom(); //instantiate a secure random class to generate random numbers

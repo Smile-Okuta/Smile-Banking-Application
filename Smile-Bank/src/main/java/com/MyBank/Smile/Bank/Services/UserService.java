@@ -1,12 +1,14 @@
 package com.MyBank.Smile.Bank.Services;
 
-import com.MyBank.Smile.Bank.Dto.AccountRequest;
-import com.MyBank.Smile.Bank.Dto.BankResponse;
-import com.MyBank.Smile.Bank.Dto.UserRequest;
+import com.MyBank.Smile.Bank.Dto.Request.NameEnquiryRequest;
+import com.MyBank.Smile.Bank.Dto.Request.UserRequest;
+import com.MyBank.Smile.Bank.Dto.Response.BankResponse;
 
 public interface UserService {
-
 //    AccountModel createAccount(AccountType accountType);
 
-    BankResponse createAccount(UserRequest userRequest);
+    BankResponse createUser(UserRequest userRequest);
+    String nameEnquiry(NameEnquiryRequest request);
+
+
 }

@@ -1,4 +1,4 @@
 package com.MyBank.Smile.Bank.Services;
 
-public interface StaffService {
+public interface AdminService {
 }
