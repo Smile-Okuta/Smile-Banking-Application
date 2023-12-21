@@ -5,16 +5,6 @@ import java.time.Year;
 import java.util.stream.Collectors;
 
 public class AccountUtils {
-
-    public static final String ACCOUNT_EXIST_CODE = "001";
-    public static final String ACCOUNT_EXIST_MESSAGE = "This user already exist";
-    public static final String ACCOUNT_CREATION_SUCCESS_CODE = "002";
-    public static final String ACCOUNT_CREATION_SUCCESS_MESSAGE = "Account Created Successfully";
-    public static final String ACCOUNT_DOES_NOT_EXIST_MESSAGE = "Account does not exist";
-    public static final String ACCOUNT_DOES_NOT_EXIST_CODE = "003";
-    public static final String ACCOUNT_FOUND_CODE = "004";
-    public static final String ACCOUNT_FOUND_SUCCESS = "User Account Found";
-    public static final String USER_DOES_NOT_EXIST_MESSAGE = "User Does Not Exist";
     public static final String ACCOUNT_CREDITED_SUCCESS_MESSAGE = "Account Credited successfully";
     public static final String ACCOUNT_CREDITED_SUCCESS_CODE = "006";
     public static final String ACCOUNT_DEBITED_SUCCESS_MESSAGE = "Account Debited Successfully";
@@ -33,5 +23,13 @@ public class AccountUtils {
                 .collect(Collectors.joining()); //collect the converted string and join them together
 
         return currentYear.toString().concat(randomNumbers);
+    }
+
+    public static String generateBvn(){
+        final SecureRandom secureRandom = new SecureRandom();
+        int firstNumbers = 2120;
+        String randomNumbers = secureRandom.ints(8, 0, 10).toString();
+
+    return firstNumbers + randomNumbers;
     }
 }

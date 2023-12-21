@@ -1,4 +1,4 @@
-package com.MyBank.Smile.Bank.Dto.Response;
+package com.MyBank.Smile.Bank.dto.Response;
 
 import com.MyBank.Smile.Bank.Models.TransactionModel;
 import com.MyBank.Smile.Bank.Models.enums.AccountStatus;
@@ -21,7 +21,7 @@ public class BankResponse {
 
 //    BankResponse class derives capabilities of AccountInfo class
     private AccountInfo accountInfo;
-
+//
     private AccountType accountType;
     private String NIN;
     private String accountNumber;

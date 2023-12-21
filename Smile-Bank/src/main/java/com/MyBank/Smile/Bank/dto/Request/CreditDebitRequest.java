@@ -1,4 +1,4 @@
-package com.MyBank.Smile.Bank.Dto.Request;
+package com.MyBank.Smile.Bank.dto.Request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

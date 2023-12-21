@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long> {
-boolean existsByNIN(String userRequest);
+boolean existsByNin(String userRequest);
 
 Boolean existsByAccountNumber(String accountNumber);
 UserModel findByNIN(String userRequest);

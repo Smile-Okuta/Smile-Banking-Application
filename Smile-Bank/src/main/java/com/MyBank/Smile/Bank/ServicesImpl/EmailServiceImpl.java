@@ -1,6 +1,6 @@
 package com.MyBank.Smile.Bank.ServicesImpl;
 
-import com.MyBank.Smile.Bank.Dto.Response.EmailDetails;
+import com.MyBank.Smile.Bank.dto.Response.EmailDetails;
 import com.MyBank.Smile.Bank.Services.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

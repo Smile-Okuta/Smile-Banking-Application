@@ -1,7 +1,6 @@
-package com.MyBank.Smile.Bank.Dto.Request;
+package com.MyBank.Smile.Bank.dto.Request;
 
 import com.MyBank.Smile.Bank.Models.enums.AccountType;
-import com.MyBank.Smile.Bank.utils.AccountUtils;
 import lombok.*;
 
 @Data
@@ -11,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 public class AccountRequest {
-    private String NIN;
+    private String Nin;
     private AccountType accountType;
     private String accountNumber;
 }

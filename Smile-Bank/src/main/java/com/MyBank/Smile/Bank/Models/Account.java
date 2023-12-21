@@ -2,7 +2,7 @@ package com.MyBank.Smile.Bank.Models;
 
 import com.MyBank.Smile.Bank.Models.enums.AccountStatus;
 import com.MyBank.Smile.Bank.Models.enums.AccountType;
-import com.MyBank.Smile.Bank.utils.AccountUtils;
+import com.MyBank.Smile.Bank.Services.TransactionService;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,11 +21,13 @@ public class  Account {
     private Long id;
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
-    private String NIN;
+    @Column(unique = true)
+    private String nin;
+    @Column(unique = true)
     private String accountNumber;
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
     private BigDecimal accountBalance;
     @OneToMany
-    private List<TransactionModel> transactionModels;
+    private List<TransactionModel> transactionService;
 }
